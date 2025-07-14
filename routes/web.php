@@ -11,13 +11,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::prefix('es')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/nosotros', [AboutController::class, 'index'])->name('about');
-    Route::get('/servicios', [ServicesController::class, 'index'])->name('services');
-    Route::get('/productos', [ProductsController::class, 'index'])->name('products');
-    Route::get('/contacto', [ContactController::class, 'index'])->name('contact');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/nosotros', [AboutController::class, 'index'])->name('about');
+Route::get('/servicios', [ServicesController::class, 'index'])->name('services');
+Route::get('/productos', [ProductsController::class, 'index'])->name('products');
+Route::get('/contacto', [ContactController::class, 'index'])->name('contact');
 
 Route::prefix('en')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
