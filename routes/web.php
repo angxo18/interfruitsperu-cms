@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Pages\AboutController;
-use App\Http\Controllers\Pages\ContactController;
-use App\Http\Controllers\Pages\HomeController;
-use App\Http\Controllers\Pages\ProductsController;
-use App\Http\Controllers\Pages\ServicesController;
+use App\Http\Controllers\Web\Pages\AboutController;
+use App\Http\Controllers\Web\Pages\ContactController;
+use App\Http\Controllers\Web\Pages\HomeController;
+use App\Http\Controllers\Web\Pages\ProductsController;
+use App\Http\Controllers\Web\Pages\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
