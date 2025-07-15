@@ -17,10 +17,10 @@ Route::get('/servicios', [ServicesController::class, 'index'])->name('services')
 Route::get('/productos', [ProductsController::class, 'index'])->name('products');
 Route::get('/contacto', [ContactController::class, 'index'])->name('contact');
 
-Route::prefix('en')->group(function () {
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/about-us', [AboutController::class, 'index'])->name('about');
-    Route::get('/services', [ServicesController::class, 'index'])->name('services');
-    Route::get('/products', [ProductsController::class, 'index'])->name('products');
-    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-});
+// Route::prefix('en')->group(function () {
+//     Route::get('/', [HomeController::class, 'index'])->name('home');
+//     Route::get('/about-us', [AboutController::class, 'index'])->name('about');
+//     Route::get('/services', [ServicesController::class, 'index'])->name('services');
+//     Route::get('/products', [ProductsController::class, 'index'])->name('products');
+//     Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+// });
