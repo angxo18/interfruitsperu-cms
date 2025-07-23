@@ -1,3 +1,11 @@
+@php
+ $images = [
+ 	'https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+ 	'https://images.unsplash.com/photo-1463123081488-789f998ac9c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+ 	'https://images.unsplash.com/photo-1602170284188-6a820463dc2b?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+ ];
+@endphp
+
 @extends('web.layouts.app')
 
 @section('scripts')
@@ -7,41 +15,37 @@
 @section('title', 'Inicio')
 
 @section('main')
-	<div x-data="homePage()">
-		<h1 x-text="message"></h1>
-	</div>
+	<x-web.carousel>
+		<div class="w-full shrink-0 relative" data-carousel-item>
+			<img src="{{ $images[0] }}" alt="Imagen 1" class="w-full h-full object-cover" />
+			<!-- Overlay Oscuro para resaltar el texto -->
+			<div class="absolute inset-0 bg-black opacity-40"></div>
+			<!-- Ajusta la opacidad según lo necesario -->
+			<div
+				class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded"
+			>
+				<p>¡Bienvenido a nuestro sitio!</p>
+			</div>
+		</div>
 
-	<x-web.carousel />
+		<div class="w-full shrink-0 relative" data-carousel-item>
+			<img src="{{ $images[1] }}" alt="Imagen 2" class="w-full h-full object-cover" />
+			<div
+				class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded"
+			>
+				<p>Explora nuestras ofertas</p>
+			</div>
+		</div>
 
-	<div class="carousel w-full">
-		<div id="slide1" class="carousel-item relative w-full">
-			<div class="bg-primary w-full h-72"><span class="text-2xl">1</span></div>
+		<div class="w-full shrink-0 relative" data-carousel-item>
+			<img src="{{ $images[2] }}" alt="Imagen 3" class="w-full h-full object-cover" />
 			<div
-				class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+				class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded"
 			>
-				<a href="#slide3" class="btn btn-circle">❮</a>
-				<a href="#slide2" class="btn btn-circle">❯</a>
+				<p>Contáctanos para más información</p>
 			</div>
 		</div>
-		<div id="slide2" class="carousel-item relative w-full">
-			<div class="bg-secondary w-full h-72"><span class="text-2xl">2</span></div>
-			<div
-				class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
-			>
-				<a href="#slide1" class="btn btn-circle">❮</a>
-				<a href="#slide3" class="btn btn-circle">❯</a>
-			</div>
-		</div>
-		<div id="slide3" class="carousel-item relative w-full">
-			<div class="bg-info w-full h-72"><span class="text-2xl">3</span></div>
-			<div
-				class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
-			>
-				<a href="#slide2" class="btn btn-circle">❮</a>
-				<a href="#slide1" class="btn btn-circle">❯</a>
-			</div>
-		</div>
-	</div>
+	</x-web.carousel>
 
 	<p>
 		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime. Ea odio, quas a

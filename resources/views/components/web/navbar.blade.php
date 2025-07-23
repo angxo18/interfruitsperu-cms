@@ -23,7 +23,7 @@
  ];
 @endphp
 
-<nav class="px-5 lg:px-30 bg-base-100" x-data="{ open: false }">
+<nav class="px-5 lg:px-28 bg-base-100" x-data="{ open: false }">
 	<div class="flex justify-between items-center h-20">
 		<div class="flex flex-shrink-0 items-center align-bottom space-x-2 py-3">
 			<x-lucide-globe class="w-12 h-12 text-red-500" />
@@ -50,7 +50,7 @@
 			@foreach ($items as $item)
 				<a
 					href="{{ $item['url'] }}"
-					class="uppercase font-semibold text-sm hover:text-primary duration-300 transition-colors"
+					class="font-semibold text-sm hover:text-primary duration-300 transition-colors text-gray-700"
 				>
 					{{ $item['name'] }}
 				</a>
