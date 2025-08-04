@@ -15,7 +15,6 @@ export default () => ({
 		this.start()
 	},
 	next() {
-		console.log(this.current)
 		this.current = (this.current + 1) % this.countImages
 	},
 	prev() {
