@@ -2,23 +2,28 @@
  $items = [
  	[
  		'url' => route('home'),
- 		'name' => 'Inicio',
+ 		'name' => 'home',
+ 		'title' => 'Inicio',
  	],
  	[
  		'url' => route('about'),
- 		'name' => 'Nosotros',
- 	],
- 	[
- 		'url' => route('services'),
- 		'name' => 'Servicios',
+ 		'name' => 'about',
+ 		'title' => 'Nosotros',
  	],
  	[
  		'url' => route('products'),
- 		'name' => 'Productos',
+ 		'name' => 'products',
+ 		'title' => 'Productos',
+ 	],
+ 	[
+ 		'url' => route('services'),
+ 		'name' => 'services',
+ 		'title' => 'Servicios',
  	],
  	[
  		'url' => route('contact'),
- 		'name' => 'Contacto',
+ 		'name' => 'contact',
+ 		'title' => 'Contacto',
  	],
  ];
 @endphp
@@ -38,9 +43,9 @@
 				<li>
 					<a
 						href="{{ $item['url'] }}"
-						class="text-gray-800 hover:text-emerald-600 transition-colors duration-300 font-semibold"
+						class="{{ request()->routeIs($item['name']) ? 'text-emerald-600' : 'text-gray-800' }} hover:text-emerald-600 transition-colors duration-300 font-semibold"
 					>
-						{{ $item['name'] }}
+						{{ $item['title'] }}
 					</a>
 				</li>
 			@endforeach
