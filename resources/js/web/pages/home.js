@@ -1,7 +1,7 @@
-import carousel from '../components/carousel.js'
+import heroCarousel from '../components/hero-carousel.js'
 
 document.addEventListener('alpine:init', () => {
-	Alpine.data('carousel', carousel)
+	Alpine.data('heroCarousel', heroCarousel)
 
 	// Alpine.data('homePage', () => ({
 	// 	message: 'Hola desde Alpine en home.js',

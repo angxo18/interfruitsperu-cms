@@ -15,37 +15,16 @@
 @section('title', 'Inicio')
 
 @section('main')
-	<x-web.carousel>
-		<div class="w-full shrink-0 relative" data-carousel-item>
-			<img src="{{ $images[0] }}" alt="Imagen 1" class="w-full h-full object-cover" />
-			<!-- Overlay Oscuro para resaltar el texto -->
-			<div class="absolute inset-0 bg-black opacity-40"></div>
-			<!-- Ajusta la opacidad según lo necesario -->
-			<div
-				class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded"
-			>
-				<p>¡Bienvenido a nuestro sitio!</p>
-			</div>
-		</div>
+	<x-web.hero-carousel class="h-[calc(100vh-5rem)]" :images="$images">
+		<div class="flex flex-col items-center justify-center h-full px-10 lg:px-28">
+			<h1 class="text-2xl text-white font-bold">
+				Brindamos un servicio de calidad en una variedad de frutas, que va desde el proceso
+				y empaque, hasta su exportación.
+			</h1>
 
-		<div class="w-full shrink-0 relative" data-carousel-item>
-			<img src="{{ $images[1] }}" alt="Imagen 2" class="w-full h-full object-cover" />
-			<div
-				class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded"
-			>
-				<p>Explora nuestras ofertas</p>
-			</div>
+			<p class="mt-10 text-white">Mango ● Uva ● Limón Palta ● Melón ● Banano orgánico</p>
 		</div>
-
-		<div class="w-full shrink-0 relative" data-carousel-item>
-			<img src="{{ $images[2] }}" alt="Imagen 3" class="w-full h-full object-cover" />
-			<div
-				class="absolute bottom-20 left-1/2 transform -translate-x-1/2 text-white text-center bg-black bg-opacity-50 px-4 py-2 rounded"
-			>
-				<p>Contáctanos para más información</p>
-			</div>
-		</div>
-	</x-web.carousel>
+	</x-web.hero-carousel>
 
 	<p>
 		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, maxime. Ea odio, quas a
