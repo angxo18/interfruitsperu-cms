@@ -26,5 +26,30 @@
 		</div>
 	</x-web.hero-carousel>
 
-	<div></div>
+	<x-web.section class="bg-white text-gray-700">
+		<h3 class="text-2xl font-semibold mb-4">Best Harvesting Agriculture Company</h3>
+		<p class="mb-8 text-center text-gray-500">
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus accusamus
+			similique tenetur cum? Atque, aliquid quos aut repudiandae placeat iste deserunt
+			tempore, illo fugiat obcaecati maiores quia natus nisi quo.
+		</p>
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-2">
+			@for ($i = 0; $i < 3; $i++)
+				<div class="flex flex-col items-center gap-1">
+					<div
+						class="w-20 h-20 bg-emerald-700 flex justify-center items-center rounded-full"
+					>
+						<x-lucide-leaf class="w-7 h-7 text-white" />
+					</div>
+					<h3 class="font-semibold text-xl mb-2">Lorem</h3>
+					<p class="text-gray-500">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis iusto
+						voluptate, provident deserunt esse atque ab soluta quibusdam, laboriosam,
+						doloribus corrupti non veniam possimus maxime quos. Adipisci corrupti non
+						nostrum.
+					</p>
+				</div>
+			@endfor
+		</div>
+	</x-web.section>
 @endsection
