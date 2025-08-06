@@ -34,16 +34,6 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-		<!-- Fonts -->
-		{{--
-      <link rel="preconnect" href="https://fonts.bunny.net" />
-      <link
-      href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
-      rel="stylesheet"
-      />
-  --}}
-
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -57,9 +47,9 @@
 	</head>
 	<body>
 		<header class="sticky top-0 z-50">
-			<x-web.navbar />
+			<x-web.navbar :menu="$menu" />
 		</header>
-		<main class="min-h-[calc(100vh-5rem)]">
+		<main>
 			@yield('main')
 		</main>
 		<x-web.footer class="bg-zinc-800 text-gray-300" :menu="$menu" />
