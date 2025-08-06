@@ -49,6 +49,9 @@
 		<header class="sticky top-0 z-50">
 			<x-web.navbar :menu="$menu" />
 		</header>
+
+		@yield('breadcrumbs')
+
 		<main>
 			@yield('main')
 		</main>
