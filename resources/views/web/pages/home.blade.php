@@ -26,7 +26,7 @@
 		</div>
 	</x-web.hero-carousel>
 
-	<x-web.section class="bg-white text-gray-700">
+	<x-web.section class="bg-white text-gray-700 text-center">
 		<h3 class="text-2xl font-semibold mb-4">Best Harvesting Agriculture Company</h3>
 		<p class="mb-8 text-center text-gray-500">
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus accusamus
