@@ -4,7 +4,7 @@
 
 <nav
 	x-data="{ open: false, scrolled: false }"
-	class="bg-white w-full flex justify-around shadow transition-all duration-300"
+	class="bg-white max-w-7xl mx-auto px-6 lg:px-8 flex justify-between transition-all duration-300"
 	x-bind:class="scrolled ? 'h-20' : 'h-[5.6rem]'"
 	x-init="
      window.addEventListener('scroll', () => {
@@ -39,7 +39,8 @@
 			class="p-2 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200"
 			x-on:click="open = !open"
 		>
-			<x-lucide-menu class="w-6 h-6" />
+			<x-lucide-menu x-show="!open" class="w-6 h-6" />
+			<x-lucide-x x-show="open" class="w-6 h-6" />
 		</button>
 	</div>
 </nav>

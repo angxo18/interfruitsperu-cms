@@ -46,7 +46,7 @@
 		<title>@yield('title') - Interfruits Perú</title>
 	</head>
 	<body>
-		<header class="sticky top-0 z-50">
+		<header class="sticky top-0 z-50 bg-white shadow">
 			<x-web.navbar :menu="$menu" />
 		</header>
 
