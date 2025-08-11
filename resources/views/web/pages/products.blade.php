@@ -88,15 +88,12 @@
 		</div>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			@foreach ($products as $product)
-				<div class="flex flex-col border border-gray-200">
-					<div>
-						<img src="{{ $product['image'] }}" alt="{{ $product['name'] }}" />
-					</div>
-					<div class="p-4">
-						<h4 class="text-xl mb-2 text-gray-700">{{ $product['title'] }}</h4>
-						<p class="text-sm text-gray-500">{{ $product['description'] }}</p>
-					</div>
-				</div>
+				<x-web.product
+					:title="$product['title']"
+					:name="$product['name']"
+					:image="$product['image']"
+					:description="$product['description']"
+				/>
 			@endforeach
 		</div>
 	</x-web.section>
@@ -117,14 +114,11 @@
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			@foreach ($materials as $material)
-				<div class="flex flex-col bg-white border border-gray-200">
-					<div>
-						<img src="{{ $material['image'] }}" alt="" />
-					</div>
-					<div class="p-4">
-						<h4 class="text-xl text-gray-700">{{ $material['title'] }}</h4>
-					</div>
-				</div>
+				<x-web.product
+					:title="$material['title']"
+					:name="$material['name']"
+					:image="$material['image']"
+				/>
 			@endforeach
 		</div>
 	</x-web.section>
