@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+[x-cloak] {
+  display: none !important;
+}
+
+@theme {
+  --font-sans: 'Instrument Sans', sans-serif;
+}
+
+@plugin "daisyui";

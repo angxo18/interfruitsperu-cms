@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Web\Pages\AboutController;
 use App\Http\Controllers\Web\Pages\ContactController;
 use App\Http\Controllers\Web\Pages\HomeController;
@@ -10,6 +11,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('login')->middleware('guest')->name('login.')->group(function () {
+        Route::get('/', [LoginController::class, 'create'])->name('create');
+        Route::post('/', [LoginController::class, 'store'])->name('store');
+    });
+});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/nosotros', [AboutController::class, 'index'])->name('about');
