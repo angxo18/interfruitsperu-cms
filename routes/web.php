@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::prefix('admin')->name('admin.')->group(function () {
+
     Route::prefix('login')->middleware('guest')->name('login.')->group(function () {
         Route::get('/', [LoginController::class, 'create'])->name('create');
         Route::post('/', [LoginController::class, 'store'])->name('store');

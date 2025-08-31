@@ -11,7 +11,6 @@ Alpine.data(
 		submitting: false,
 		handleSubmit() {
 			this.submitting = true
-			console.log('submit')
 			;(this.$refs.form as HTMLFormElement).submit()
 		},
 	}),

@@ -11,7 +11,7 @@
 			rel="stylesheet"
 		/>
 
-		@vite(['resources/css/admin/app.css', 'resources/js/admin/pages/auth/login.ts'])
+		@vite(['resources/css/admin/app.css', 'resources/ts/admin/pages/auth/login.ts'])
 		<title>Login - {{ config('app.name') }}</title>
 	</head>
 	<body>

@@ -8,9 +8,9 @@
 
 @extends('web.layouts.app')
 
-@section('scripts')
-	@vite(['resources/js/web/pages/home.js'])
-@endsection
+@push('scripts')
+	@vite(['resources/ts/web/pages/home.ts'])
+@endpush
 
 @section('title', 'Inicio')
 
