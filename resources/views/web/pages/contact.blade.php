@@ -13,7 +13,7 @@
  ];
 @endphp
 
-@extends('web.layouts.app')
+@extends('components.web.layouts.app')
 
 @push('scripts')
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>

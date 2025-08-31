@@ -11,7 +11,7 @@
  ];
 @endphp
 
-@extends('web.layouts.app')
+@extends('components.web.layouts.app')
 
 @section('title', 'Nosotros')
 

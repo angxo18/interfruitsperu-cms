@@ -6,7 +6,7 @@
  ];
 @endphp
 
-@extends('web.layouts.app')
+@extends('components.web.layouts.app')
 
 @push('scripts')
 	@vite(['resources/ts/web/pages/home.ts'])

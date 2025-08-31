@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('components.admin.layouts.app')
 
 @section('title', 'Dashboard')
 

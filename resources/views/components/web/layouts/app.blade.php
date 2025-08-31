@@ -46,7 +46,7 @@
 	</head>
 	<body>
 		<header class="sticky top-0 z-50 bg-white shadow">
-			<x-web.navbar :menu="$menu" />
+			<x-web.layouts.app.navbar :menu="$menu" />
 		</header>
 
 		@yield('breadcrumbs')
@@ -54,6 +54,6 @@
 		<main>
 			@yield('main')
 		</main>
-		<x-web.footer class="bg-zinc-800 text-gray-300" :menu="$menu" />
+		<x-web.layouts.app.footer class="bg-zinc-800 text-gray-300" :menu="$menu" />
 	</body>
 </html>

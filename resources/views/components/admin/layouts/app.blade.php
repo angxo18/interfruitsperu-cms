@@ -20,7 +20,7 @@
 				class="bg-base-100 min-w-64 w-64 h-screen max-h-screen z-10 border-solid border-r border-base-content/5"
 			></div>
 			<div class="bg-base-300 flex flex-col grow h-screen overflow-auto">
-				<x-admin.navbar />
+				<x-admin.layouts.app.navbar />
 				<div class="grow p-6">
 					@yield('main')
 				</div>

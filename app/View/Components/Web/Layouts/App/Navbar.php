@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Web;
+namespace App\View\Components\Web\Layouts\App;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -21,6 +21,6 @@ class Navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.web.navbar');
+        return view('components.web.layouts.app.navbar');
     }
 }
