@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Web\Pages\AboutController;
 use App\Http\Controllers\Web\Pages\ContactController;
 use App\Http\Controllers\Web\Pages\HomeController;
@@ -18,6 +19,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/', [LoginController::class, 'create'])->name('create');
         Route::post('/', [LoginController::class, 'store'])->name('store');
     });
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

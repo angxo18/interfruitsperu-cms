@@ -13,6 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->prependToGroup('web', SetLocale::class);
+        $middleware->redirectGuestsTo(fn() => route('admin.login.create'));
+        $middleware->redirectUsersTo(fn() => route('admin.dashboard'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
