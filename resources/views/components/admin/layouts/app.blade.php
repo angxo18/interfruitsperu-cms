@@ -15,16 +15,29 @@
 		<title>@yield('title') - {{ config('app.name') }}</title>
 	</head>
 	<body>
-		<div class="flex">
+		<div
+			class="flex"
+			x-data="{ openSidebar: false }"
+			x-init="openSidebar = window.matchMedia('(min-width: 1024px)').matches"
+			x-on:keydown.window.escape="window.innerWidth < 1024 && (openSidebar = false)"
+			x-cloak
+		>
+			<x-admin.layouts.app.sidebar />
 			<div
-				class="bg-base-100 min-w-64 w-64 h-screen max-h-screen z-10 border-solid border-r border-base-content/5"
-			></div>
-			<div class="bg-base-300 flex flex-col grow h-screen overflow-auto">
+				class="bg-base-200 flex flex-col grow h-screen overflow-auto transition-all duration-300"
+				x-bind:class="{ 'lg:ml-64': openSidebar }"
+			>
 				<x-admin.layouts.app.navbar />
 				<div class="grow p-6">
 					@yield('main')
 				</div>
 			</div>
+
+			<div
+				class="bg-backdrop fixed top-0 left-0 h-full w-full lg:hidden z-80"
+				x-on:click="openSidebar = false"
+				x-show="openSidebar"
+			></div>
 		</div>
 	</body>
 </html>

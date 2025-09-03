@@ -5,6 +5,33 @@
 @section('main')
 	<h1>Dashboard</h1>
 
+	<div class="card card-border bg-base-100">
+		<div class="card-body">
+			<h2 class="card-title">Card Title</h2>
+			<p>
+				A card component has a figure, a body part, and inside body there are title and
+				actions parts
+			</p>
+			<div class="card-actions justify-end">
+				<button class="btn btn-primary">Buy Now</button>
+			</div>
+		</div>
+	</div>
+
+	<button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+	<dialog id="my_modal_1" class="modal">
+		<div class="modal-box">
+			<h3 class="text-lg font-bold">Hello!</h3>
+			<p class="py-4">Press ESC key or click the button below to close</p>
+			<div class="modal-action">
+				<form method="dialog">
+					<!-- if there is a button in form, it will close the modal -->
+					<button class="btn">Close</button>
+				</form>
+			</div>
+		</div>
+	</dialog>
+
 	<p>
 		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id deleniti temporibus ipsa
 		asperiores recusandae sequi totam, inventore illo suscipit, amet, modi minus at magnam

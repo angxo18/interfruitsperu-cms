@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+@plugin "daisyui" {
+  exclude: rootscrollgutter;
+}
+
 [x-cloak] {
   display: none !important;
 }
@@ -8,4 +12,6 @@
   --font-sans: 'Instrument Sans', sans-serif;
 }
 
-@plugin "daisyui";
+@utility bg-backdrop {
+  background-color: #0006;
+}
