@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->middleware('guest')->name('admin.')->group(function () {
 
-    Route::prefix('login')->middleware('guest')->name('login.')->group(function () {
+    Route::prefix('login')->name('login.')->group(function () {
         Route::get('/', [LoginController::class, 'create'])->name('create');
-        Route::post('/', [LoginController::class, 'store'])->name('store');
+        Route::post('/', [LoginController::class, 'store'])->middleware('throttle:6,1')->name('store');
     });
+});
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
+
+    Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

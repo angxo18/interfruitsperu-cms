@@ -16,5 +16,7 @@
 		<button class="btn btn-sm btn-circle btn-ghost">
 			<x-lucide-bell class="w-5 h-5" />
 		</button>
+
+		<x-admin.layouts.app.user-menu />
 	</div>
 </div>
