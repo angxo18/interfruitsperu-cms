@@ -5,16 +5,16 @@
 >
 	<div>
 		<button class="btn btn-sm btn-square btn-ghost" x-on:click="openSidebar = !openSidebar">
-			<x-lucide-menu class="w-5 h-5" />
+			<x-app-icon name="menu" class="w-5 h-5" />
 		</button>
 	</div>
 
 	<div class="inline-flex gap-0.5 items-center">
 		<button class="btn btn-sm btn-circle btn-ghost">
-			<x-lucide-sun class="w-5 h-5" />
+			<x-app-icon name="sun" class="w-5 h-5" />
 		</button>
 		<button class="btn btn-sm btn-circle btn-ghost">
-			<x-lucide-bell class="w-5 h-5" />
+			<x-app-icon name="bell" class="w-5 h-5" />
 		</button>
 
 		<x-admin.layouts.app.user-menu />

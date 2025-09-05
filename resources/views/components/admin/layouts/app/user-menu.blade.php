@@ -29,7 +29,7 @@
 		<div class="flex flex-col bg-base-200 text-base-content h-full w-80 p-4">
 			<div>
 				<label for="user-sidemenu-drawer" class="btn btn-sm btn-circle btn-ghost">
-					<x-lucide-x class="w-5 h-5" />
+					<x-app-icon name="x" class="w-5 h-5" />
 				</label>
 			</div>
 			<div class="flex flex-col items-center pb-5 border-b border-base-content/5">
@@ -48,7 +48,7 @@
 					<li class="menu-title">Cuenta</li>
 					<li>
 						<a href="#">
-							<x-lucide-user class="w-5 h-5" />
+							<x-app-icon name="user" class="w-5 h-5" />
 							<span>Perfil</span>
 						</a>
 					</li>
@@ -59,7 +59,7 @@
 								type="submit"
 								class="cursor-pointer text-error gap-2 flex items-center w-full"
 							>
-								<x-lucide-log-out class="w-5 h-5" />
+								<x-app-icon name="log-out" class="w-5 h-5" />
 								<span>Cerrar Sesión</span>
 							</button>
 						</form>

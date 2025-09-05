@@ -39,7 +39,7 @@
 					<div
 						class="w-20 h-20 bg-emerald-700 flex justify-center items-center rounded-full"
 					>
-						<x-lucide-leaf class="w-7 h-7 text-white" />
+						<x-app-icon name="leaf" class="w-7 h-7 text-white" />
 					</div>
 					<h3 class="font-semibold text-xl mb-2">Lorem</h3>
 					<p class="text-gray-500">

@@ -35,12 +35,12 @@
 			<div>
 				<h3 class="text-lg font-semibold text-white mb-4">Sedes de producción</h3>
 				<p class="text-sm mb-3">
-					<x-lucide-map-pin class="w-5 h-5 inline-block text-gray-200" />
+					<x-app-icon name="map-pin" class="w-5 h-5 inline-block text-gray-200" />
 					<span class="font-semibold">Tambo Grande:</span>
 					Carretera Tambo Grande - Las Lomas Km. 1078 + 030, Tambo Grande - Piura, Perú
 				</p>
 				<p class="text-sm mb-3">
-					<x-lucide-map-pin class="w-5 h-5 inline-block text-gray-200" />
+					<x-app-icon name="map-pin" class="w-5 h-5 inline-block text-gray-200" />
 					<span class="font-semibold">Sullana:</span>
 					Carretera Tambo Grande RRCC 418 No. 95 Cas. Huangala, Sullana-Piura, Perú
 				</p>
@@ -50,11 +50,11 @@
 			<div>
 				<h3 class="text-lg font-semibold text-white mb-4">Contáctanos</h3>
 				<p class="text-sm mb-3">
-					<x-lucide-phone class="w-5 h-5 mr-1 inline-block text-gray-200" />
+					<x-app-icon name="phone" class="w-5 h-5 mr-1 inline-block text-gray-200" />
 					+51 123 456 789
 				</p>
 				<p class="text-sm mb-4">
-					<x-lucide-mail class="w-5 h-5 mr-1 inline-block text-gray-200" />
+					<x-app-icon name="mail" class="w-5 h-5 mr-1 inline-block text-gray-200" />
 					contacto@frutalexport.com
 				</p>
 				<div class="flex space-x-4">

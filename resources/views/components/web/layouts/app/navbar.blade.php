@@ -13,7 +13,7 @@
  "
 >
 	<div class="flex items-center gap-3">
-		<x-lucide-globe class="w-12 h-12 text-red-500" />
+		<x-app-icon name="globe" class="w-12 h-12 text-red-500" />
 		<span class="text-xl lg:text-2xl font-bold">Interfruits Perú</span>
 	</div>
 	<div
@@ -39,8 +39,8 @@
 			class="p-2 rounded cursor-pointer hover:bg-gray-200 transition-colors duration-200"
 			x-on:click="open = !open"
 		>
-			<x-lucide-menu x-show="!open" class="w-6 h-6" />
-			<x-lucide-x x-show="open" class="w-6 h-6" />
+			<x-app-icon name="menu" x-show="!open" class="w-6 h-6" />
+			<x-app-icon name="x" x-show="open" class="w-6 h-6" />
 		</button>
 	</div>
 </nav>

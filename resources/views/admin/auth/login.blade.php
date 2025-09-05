@@ -40,7 +40,7 @@
 								Email
 							</label>
 							<label class="input w-full">
-								<x-lucide-mail class="w-5 h-5 text-base-content/80" />
+								<x-app-icon name="mail" class="w-5 h-5 text-base-content/80" />
 								<input
 									type="email"
 									id="email"
@@ -62,7 +62,7 @@
 								Contraseña
 							</label>
 							<label class="input w-full">
-								<x-lucide-key-round class="w-5 h-5 text-base-content/80" />
+								<x-app-icon name="key-round" class="w-5 h-5 text-base-content/80" />
 								<input
 									type="password"
 									id="password"

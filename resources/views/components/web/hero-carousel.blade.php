@@ -29,14 +29,14 @@
 			class="bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition cursor-pointer"
 			aria-label="Anterior"
 		>
-			<x-lucide-chevron-left class="w-6 h-6" />
+			<x-app-icon name="chevron-left" class="w-6 h-6" />
 		</button>
 		<button
 			x-on:click="next"
 			class="bg-black/40 hover:bg-black/60 text-white p-2 rounded-full transition cursor-pointer"
 			aria-label="Siguiente"
 		>
-			<x-lucide-chevron-right class="w-6 h-6" />
+			<x-app-icon name="chevron-right" class="w-6 h-6" />
 		</button>
 	</div>
 

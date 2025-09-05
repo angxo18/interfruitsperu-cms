@@ -40,7 +40,7 @@
 						<div
 							class="w-10 h-10 bg-emerald-700 flex justify-center items-center rounded-full"
 						>
-							<x-lucide-mail class="w-5 h-5 text-white" />
+							<x-app-icon name="mail" class="w-5 h-5 text-white" />
 						</div>
 						ventas@interfruitsperu.com
 					</div>
@@ -48,7 +48,7 @@
 						<div
 							class="w-10 h-10 bg-emerald-700 flex justify-center items-center rounded-full"
 						>
-							<x-lucide-phone class="w-5 h-5 text-white" />
+							<x-app-icon name="phone" class="w-5 h-5 text-white" />
 						</div>
 						+51 123 456 789
 					</div>
