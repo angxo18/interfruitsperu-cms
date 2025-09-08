@@ -12,7 +12,7 @@
 		/>
 		@stack('scripts')
 		@vite(['resources/css/admin/app.css', 'resources/ts/admin/app.ts'])
-		<title>@yield('title') - {{ config('app.name') }}</title>
+		<title>{{ $title }}</title>
 	</head>
 	<body>
 		<div
@@ -29,7 +29,7 @@
 			>
 				<x-admin.layouts.app.navbar />
 				<div class="grow p-6">
-					@yield('main')
+					{{ $slot }}
 				</div>
 			</div>
 
