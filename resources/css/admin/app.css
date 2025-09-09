@@ -2,7 +2,7 @@
 
 @plugin "daisyui" {
   exclude: rootscrollgutter;
-  /* themes: coffee --default; */
+  themes: dark --default;
 }
 
 [x-cloak] {

@@ -1,8 +1,8 @@
-@extends('components.admin.layouts.app')
+@php
+ $title = 'Dashboard';
+@endphp
 
-@section('title', 'Dashboard')
-
-@section('main')
+<x-admin.layouts.app :$title>
 	<h1>Dashboard</h1>
 
 	<div class="card card-border bg-base-100">
@@ -84,4 +84,4 @@
 		quasi beatae nemo! Rem iure fuga molestias corporis, ad commodi nam quam a neque mollitia
 		cumque, odio alias, quasi suscipit animi quae ullam.
 	</p>
-@endsection
+</x-admin.layouts.app>

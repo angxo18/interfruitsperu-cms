@@ -26,6 +26,7 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
     Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/roles', [DashboardController::class, 'index'])->name('roles.index');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

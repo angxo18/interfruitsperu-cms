@@ -22,7 +22,7 @@
 			x-on:keydown.window.escape="window.innerWidth < 1024 && (openSidebar = false)"
 			x-cloak
 		>
-			<x-admin.layouts.app.sidebar />
+			<x-admin.layouts.app.sidebar :$menuCategories />
 			<div
 				class="bg-base-200 flex flex-col grow h-screen overflow-auto transition-all duration-300"
 				x-bind:class="{ 'lg:ml-64': openSidebar }"
