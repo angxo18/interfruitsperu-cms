@@ -1,4 +1,5 @@
 {
+    "name": "interfruits-peru-cms",
     "$schema": "https://json.schemastore.org/package.json",
     "private": true,
     "type": "module",
