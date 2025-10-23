@@ -9,7 +9,7 @@
 ])
 
 <div
-	class="absolute flex flex-col bg-base-100 shrink-0 w-64 h-screen max-h-screen z-90 lg:z-10 transition-all duration-300 border-solid border-r border-base-content/5"
+	class="absolute flex flex-col bg-base-100 shrink-0 w-64 h-screen max-h-screen z-90 lg:z-10 transition-all duration-300 border-solid border-r border-base-300"
 	x-bind:class="[openSidebar ? '-translate-x-0' : '-translate-x-full']"
 >
 	<div class="flex justify-between items-center gap-3 min-h-16 h-16 px-4">
