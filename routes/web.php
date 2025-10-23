@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Web\Pages\AboutController;
 use App\Http\Controllers\Web\Pages\ContactController;
 use App\Http\Controllers\Web\Pages\HomeController;
@@ -24,6 +25,10 @@ Route::prefix('admin')->middleware('guest')->name('admin.')->group(function () {
 Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
 
     Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+
+    Route::controller(UserController::class)->prefix('usuarios')->name('users.')->group(function () {
+        Route::get('/', 'index')->name('index');
+    });
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/roles', [DashboardController::class, 'index'])->name('roles.index');
