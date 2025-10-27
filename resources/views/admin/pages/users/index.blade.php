@@ -2,7 +2,7 @@
 	<h1>Usuarios</h1>
 
 	<x-admin.card-container>
-		<x-admin.data-table>
+		<x-admin.data-table :table-zebra="true">
 			<x-slot:head>
 				<tr>
 					<td>#</td>

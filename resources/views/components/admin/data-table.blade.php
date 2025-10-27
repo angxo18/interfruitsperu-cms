@@ -1,5 +1,9 @@
-<div class="overflow-hidden overflow-x-auto">
-	<table class="table">
+@props([
+	'tableZebra' => false,
+])
+
+<div class="overflow-x-auto">
+	<table class="table @if($tableZebra) table-zebra @endif">
 		@isset($head)
 			<thead>
 				{{ $head }}
