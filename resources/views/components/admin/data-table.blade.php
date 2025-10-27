@@ -11,3 +11,7 @@
 		</tbody>
 	</table>
 </div>
+
+@isset($pagination)
+	{{ $pagination }}
+@endisset
