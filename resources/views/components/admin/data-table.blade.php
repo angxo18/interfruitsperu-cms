@@ -2,11 +2,11 @@
 	'tableZebra' => false,
 ])
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto p-1">
 	<table class="table @if($tableZebra) table-zebra @endif">
-		@isset($head)
+		@isset($thead)
 			<thead>
-				{{ $head }}
+				{{ $thead }}
 			</thead>
 		@endisset
 
