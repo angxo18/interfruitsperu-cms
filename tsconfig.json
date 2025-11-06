@@ -5,7 +5,10 @@
     "moduleResolution": "Node",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "ziggy-js": ["./vendor/tightenco/ziggy"]
+    }
   },
   "include": [
     "resources/**/*"

@@ -15,6 +15,7 @@
 
 import type { AxiosInstance } from 'axios'
 import type Alpine from 'alpinejs'
+import { route as routeFn } from 'ziggy-js'
 
 declare global {
 	interface Window {
@@ -28,4 +29,6 @@ declare global {
 		$watch: (prop: string, callback: (value: any) => void) => void
 		$dispatch: (event: string, detail?: any) => void
 	}
+
+	var route: typeof routeFn
 }
