@@ -17,15 +17,29 @@
 					<form role="search" x-on:submit.prevent="applyFilters">
 						<x-admin.data-table.filters.input-search
 							placeholder="Nombre, Email"
-							x-model="search"
+							x-model="filters.search"
 						/>
 					</form>
 
 					<x-admin.data-table.filters-drawer>
-						<ul class="menu bg-base-200 min-h-full w-80 p-4">
-							<li><a>Sidebar Item 1</a></li>
-							<li><a>Sidebar Item 2</a></li>
-						</ul>
+						<x-admin.data-table.filters.input-text
+							label="Nombre"
+							placeholder="Nombre"
+							name="name"
+							x-model="filters.name"
+						/>
+
+						<x-admin.data-table.filters.input-text
+							label="Email"
+							placeholder="Email"
+							name="email"
+							x-model="filters.email"
+						/>
+
+						<x-admin.data-table.filters.date-range
+							label="Fecha de Creación"
+							model="filters.created_at"
+						/>
 					</x-admin.data-table.filters-drawer>
 				</x-slot>
 

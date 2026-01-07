@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Filters\Admin\DateRangeFilter;
 use App\Helpers\Admin\PaginationHelper;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -21,6 +22,7 @@ class UserController extends Controller
             ->allowedFilters([
                 AllowedFilter::partial('name'),
                 AllowedFilter::partial('email'),
+                AllowedFilter::custom('created_at', new DateRangeFilter('created_at')),
                 AllowedFilter::callback('search', function (Builder $query, $value) {
 
                     $query->where(function ($q) use ($value) {
@@ -32,8 +34,6 @@ class UserController extends Controller
             ])
             ->paginate($perPage)
             ->withQueryString();
-
-        // $users = User::paginate($perPage)->withQueryString();
 
         return view('admin.pages.users.index', ['users' => $users]);
     }

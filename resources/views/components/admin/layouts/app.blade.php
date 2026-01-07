@@ -10,6 +10,7 @@
 			href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
 			rel="stylesheet"
 		/>
+		@routes
 		@stack('scripts')
 		@vite(['resources/css/admin/app.css', 'resources/ts/admin/app.ts'])
 		<title>{{ $title }}</title>
