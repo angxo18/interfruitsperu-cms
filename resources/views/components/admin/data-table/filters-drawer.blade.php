@@ -30,8 +30,15 @@
 						{{ $slot }}
 					</div>
 
-					<div>
+					<div class="flex gap-2">
 						<button type="submit" class="btn btn-sm btn-primary">Filtrar</button>
+						<button
+							type="button"
+							class="btn btn-sm btn-secondary"
+							x-on:click="$dispatch('data-table:filters-cleared')"
+						>
+							Limpiar
+						</button>
 					</div>
 				</form>
 			</div>

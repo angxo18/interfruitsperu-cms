@@ -11,17 +11,20 @@ interface UserFilters {
 	}
 }
 
+const defaultOperator = 'on'
+const defaultFilters = {
+	search: '',
+	name: '',
+	email: '',
+	created_at: {
+		operator: defaultOperator,
+		from: '',
+		to: '',
+	},
+} as UserFilters
+
 Alpine.data('index', () => ({
-	filters: {
-		search: '',
-		name: '',
-		email: '',
-		created_at: {
-			operator: 'on',
-			from: '',
-			to: '',
-		},
-	} as UserFilters,
+	filters: defaultFilters,
 	init() {
 		const params = new URLSearchParams(window.location.search)
 
@@ -29,12 +32,17 @@ Alpine.data('index', () => ({
 		this.filters.name = params.get('filter[name]') || ''
 		this.filters.email = params.get('filter[email]') || ''
 
-		this.filters.created_at.operator = params.get('filter[created_at][operator]') || 'on'
+		this.filters.created_at.operator =
+			params.get('filter[created_at][operator]') || defaultOperator
 		this.filters.created_at.from = params.get('filter[created_at][from]') || ''
 		this.filters.created_at.to = params.get('filter[created_at][to]') || ''
 
 		this.$el.addEventListener('data-table:filters-submitted', () => {
 			this.applyFilters()
+		})
+
+		this.$el.addEventListener('data-table:filters-cleared', () => {
+			this.clearFilters()
 		})
 	},
 	applyFilters() {
@@ -71,5 +79,10 @@ Alpine.data('index', () => ({
 		}
 
 		window.location.href = `${route('admin.users.index')}?${params.toString()}`
+	},
+	clearFilters() {
+		this.filters = defaultFilters
+
+		this.applyFilters()
 	},
 }))
