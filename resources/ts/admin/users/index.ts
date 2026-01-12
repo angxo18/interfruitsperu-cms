@@ -12,7 +12,8 @@ interface UserFilters {
 }
 
 const defaultOperator = 'on'
-const defaultFilters = {
+
+const getDefaultFilters = (): UserFilters => ({
 	search: '',
 	name: '',
 	email: '',
@@ -21,10 +22,10 @@ const defaultFilters = {
 		from: '',
 		to: '',
 	},
-} as UserFilters
+})
 
 Alpine.data('index', () => ({
-	filters: defaultFilters,
+	filters: getDefaultFilters(),
 	init() {
 		const params = new URLSearchParams(window.location.search)
 
@@ -47,6 +48,8 @@ Alpine.data('index', () => ({
 	},
 	applyFilters() {
 		const params = new URLSearchParams(window.location.search)
+
+		params.set('page', '1')
 
 		if (this.filters.search) {
 			params.set('filter[search]', this.filters.search)
@@ -81,7 +84,7 @@ Alpine.data('index', () => ({
 		window.location.href = `${route('admin.users.index')}?${params.toString()}`
 	},
 	clearFilters() {
-		this.filters = defaultFilters
+		this.filters = getDefaultFilters()
 
 		this.applyFilters()
 	},
