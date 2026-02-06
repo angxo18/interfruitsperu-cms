@@ -74,5 +74,15 @@
 				</x-slot>
 			</x-admin.data-table>
 		</x-admin.card-container>
+
+		@if ($errors->filters->any())
+			<x-admin.flash-alert
+				alert-class="alert alert-error"
+				alert-icon-type="error"
+				title="Errores en búsqueda"
+			>
+				<span>Hay errores en los filtros de búsqueda.</span>
+			</x-admin.flash-alert>
+		@endif
 	</div>
 </x-admin.layouts.app>

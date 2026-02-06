@@ -5,16 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Filters\Admin\DateRangeFilter;
 use App\Helpers\Admin\PaginationHelper;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\User\IndexRequest;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class UserController extends Controller
 {
-    public function index(Request $request): View
+    public function index(IndexRequest $request): View
     {
         $perPage = PaginationHelper::perPage();
 
