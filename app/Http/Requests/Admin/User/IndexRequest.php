@@ -26,7 +26,7 @@ class IndexRequest extends FormRequest
         return [
 
             // 'filter.created_at' => ['sometimes', 'string', 'regex:/^\d{4}-\d{2}-\d{2}\s*to\s*\d{4}-\d{2}-\d{2}$/'],
-            'filter.search' => ['nullable', 'string', 'min:2', 'max:255'],
+            'filter.search' => ['nullable', 'string', 'max:255'],
             'filter.name' => ['nullable', 'string', 'max:255'],
             'filter.email' => ['nullable', 'string', 'max:255'],
         ];

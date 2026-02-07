@@ -21,7 +21,7 @@
 	x-show="show"
 	x-init="setTimeout(() => (show = false), 3000)"
 	x-transition.duration.300ms
-	class="toast toast-top toast-center lg:toast-end z-[99] w-sm"
+	class="toast toast-top toast-center lg:toast-end z-20 w-sm"
 >
 	<div class="{{ $alertClass }} flex gap-2 items-start align-baseline">
 		@if ($alertIcon)
