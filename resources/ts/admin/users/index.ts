@@ -26,7 +26,10 @@ const getDefaultFilters = (): UserFilters => ({
 
 Alpine.data('index', () => ({
 	filters: getDefaultFilters(),
+	pageParam: 'page',
 	init() {
+		this.pageParam = this.$el.dataset.pageParam || 'page'
+
 		const params = new URLSearchParams(window.location.search)
 
 		this.filters.search = params.get('filter[search]') || ''
@@ -49,7 +52,7 @@ Alpine.data('index', () => ({
 	applyFilters() {
 		const params = new URLSearchParams(window.location.search)
 
-		params.set('page', '1')
+		params.set(this.pageParam, '1')
 
 		if (this.filters.search) {
 			params.set('filter[search]', this.filters.search)
@@ -81,7 +84,9 @@ Alpine.data('index', () => ({
 			params.delete('filter[created_at][to]')
 		}
 
-		window.location.href = `${route('admin.users.index')}?${params.toString()}`
+		const url = new URL(window.location.href)
+		url.search = params.toString()
+		window.location.href = url.toString()
 	},
 	clearFilters() {
 		this.filters = getDefaultFilters()

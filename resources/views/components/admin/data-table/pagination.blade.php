@@ -12,6 +12,15 @@
  	is_array($window['last']) ? '...' : null,
  	$window['last'],
  ]);
+
+ // nombre real del parámetro de página del paginator
+ $pageParam = $paginator->getPageName();
+
+ // Detectar si es simple o múltiple
+ $context = $pageParam === 'page' ? null : str_replace('page_', '', $pageParam);
+
+ // nombre del per_page correspondiente
+ $perPageParam = App\Helpers\Admin\PaginationHelper::perPageName($context);
 @endphp
 
 @if ($paginator->hasPages())
@@ -112,9 +121,23 @@
 
 		<div class="flex items-center gap-1">
 			<span>Filas:</span>
-			<select class="select select-sm w-16">
+			<select
+				class="select select-sm w-16"
+				x-data
+				x-on:change="
+        const url = new URL(window.location.href)
+        url.searchParams.set('{{ $pageParam }}', 1)
+        url.searchParams.set('{{ $perPageParam }}', $event.target.value)
+        window.location.href = url.toString()
+    "
+			>
 				@foreach (App\Helpers\Admin\PaginationHelper::availableSizes() as $size)
-					<option value="{{ $size }}">{{ $size }}</option>
+					<option
+						value="{{ $size }}"
+						@selected($size == request()->integer($perPageParam, App\Helpers\Admin\PaginationHelper::defaultPerPage()))
+					>
+						{{ $size }}
+					</option>
 				@endforeach
 			</select>
 		</div>

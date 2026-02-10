@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'default' => 10,
+    'default' => 5,
 
     /*
     |--------------------------------------------------------------------------
@@ -33,6 +33,6 @@ return [
     | la cantidad de registros por página (por ejemplo, ?per_page=25).
     |
     */
-    'param_name' => 'per_page',
+    // 'param_name' => 'per_page',
 
 ];
