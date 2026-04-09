@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Admin\User;
 
+use App\Enums\Admin\DateFilterOperator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class IndexRequest extends FormRequest
 {
@@ -24,8 +26,23 @@ class IndexRequest extends FormRequest
     public function rules(): array
     {
         return [
-
-            // 'filter.created_at' => ['sometimes', 'string', 'regex:/^\d{4}-\d{2}-\d{2}\s*to\s*\d{4}-\d{2}-\d{2}$/'],
+            'filter.created_at' => ['sometimes', 'array'],
+            'filter.created_at.operator' => [
+                'sometimes',
+                'required',
+                'string',
+                Rule::enum(DateFilterOperator::class),
+            ],
+            'filter.created_at.from' => [
+                'required_with:filter.created_at.operator',
+                'date',
+            ],
+            'filter.created_at.to' => [
+                'nullable',
+                'required_if:filter.created_at.operator,'.DateFilterOperator::BETWEEN->value,
+                'date',
+                'after_or_equal:filter.created_at.from',
+            ],
             'filter.search' => ['nullable', 'string', 'max:255'],
             'filter.name' => ['nullable', 'string', 'max:255'],
             'filter.email' => ['nullable', 'string', 'max:255'],
