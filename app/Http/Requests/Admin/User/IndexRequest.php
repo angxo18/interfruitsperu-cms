@@ -48,4 +48,24 @@ class IndexRequest extends FormRequest
             'filter.email' => ['nullable', 'string', 'max:255'],
         ];
     }
+
+    public function filterCounter(): int
+    {
+        $filters = $this->input('filter', []);
+        $count = 0;
+
+        // Count the number of non-empty filters
+        foreach (['search', 'name', 'email'] as $field) {
+            if (! empty($filters[$field])) {
+                $count++;
+            }
+        }
+
+        // Check if the date filter is applied
+        if (! empty($filters['created_at']['operator']) && ! empty($filters['created_at']['from'])) {
+            $count++;
+        }
+
+        return $count;
+    }
 }

@@ -1,8 +1,17 @@
+@props([
+	'filterCount' => 0,
+])
+
 <div class="drawer drawer-end w-auto" x-data x-id="['filter-drawer']">
 	<input :id="$id('filter-drawer')" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content">
-		<label :for="$id('filter-drawer')" class="btn drawer-button btn-sm btn-square btn-ghost">
-			<x-app-icon name="list-filter" class="w-4 h-4" />
+		<label
+			:for="$id('filter-drawer')"
+			class="btn drawer-button btn-sm btn-neutral w-full lg:w-auto"
+		>
+			<x-app-icon name="list-filter" class="w-4 h-4 mr-1" />
+			Filtros
+			<div class="badge badge-sm">{{ $filterCount }}</div>
 		</label>
 	</div>
 	<div class="drawer-side">

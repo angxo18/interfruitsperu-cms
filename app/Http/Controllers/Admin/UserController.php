@@ -16,6 +16,7 @@ class UserController extends Controller
 {
     public function index(IndexRequest $request): View
     {
+        $filterCount = $request->filterCounter();
         $perPage = PaginationHelper::perPage();
 
         $users = QueryBuilder::for(User::class)
@@ -35,6 +36,6 @@ class UserController extends Controller
             ->paginate($perPage)
             ->withQueryString();
 
-        return view('admin.pages.users.index', ['users' => $users]);
+        return view('admin.pages.users.index', ['users' => $users, 'filterCount' => $filterCount]);
     }
 }

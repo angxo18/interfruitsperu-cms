@@ -9,7 +9,7 @@
 		@endisset
 	</div>
 
-	<div class="flex items-center gap-1">
+	<div class="flex flex-col lg:flex-row gap-1">
 		@isset($filters)
 			{{ $filters }}
 		@endisset

@@ -21,7 +21,7 @@
 						/>
 					</form>
 
-					<x-admin.data-table.filters-drawer>
+					<x-admin.data-table.filters-drawer :filter-count="$filterCount">
 						<x-admin.data-table.filters.input-text
 							label="Nombre"
 							placeholder="Nombre"
