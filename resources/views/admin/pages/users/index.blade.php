@@ -4,15 +4,21 @@
 	@endpush
 
 	<div x-data="index">
-		<h1>Usuarios</h1>
+		<h1 class="text-2xl font-bold mb-6">Usuarios</h1>
 
 		<x-admin.card-container>
+			<x-slot:header>
+				<x-admin.card-container.header
+					title="Usuarios"
+					description="Listado de usuarios registrados en el sistema."
+				>
+					<button type="button" class="btn btn-primary">
+						<x-app-icon name="plus" />
+						Nuevo Usuario
+					</button>
+				</x-admin.card-container.header>
+			</x-slot>
 			<x-admin.data-table :table-zebra="true">
-				<x-slot:actions>
-					<button id="btn_new" type="button" class="btn btn-sm btn-primary">Nuevo</button>
-					<button type="button" class="btn btn-sm btn-secondary">Lorem</button>
-				</x-slot>
-
 				<x-slot:filters>
 					<form role="search" x-on:submit.prevent="applyFilters">
 						<x-admin.data-table.filters.input-search
