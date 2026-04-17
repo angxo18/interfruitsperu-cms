@@ -4,7 +4,7 @@
 	@endpush
 
 	<div x-data="index">
-		<h1 class="text-2xl font-bold mb-6">Usuarios</h1>
+		<x-admin.page-title>Usuarios</x-admin.page-title>
 
 		<x-admin.card-container>
 			<x-slot:header>
