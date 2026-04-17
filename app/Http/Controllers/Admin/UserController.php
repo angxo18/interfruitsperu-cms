@@ -38,4 +38,9 @@ class UserController extends Controller
 
         return view('admin.pages.users.index', ['users' => $users, 'filterCount' => $filterCount]);
     }
+
+    public function create(): View
+    {
+        return view('admin.pages.users.create');
+    }
 }

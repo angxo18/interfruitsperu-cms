@@ -2,9 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Menu;
 use App\Models\MenuCategory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -21,6 +19,7 @@ class MenuSeeder extends Seeder
             'title' => 'Dashboard',
             'icon' => 'layout-dashboard',
             'route_name' => 'admin.dashboard',
+            'route_pattern' => 'admin.dasboard',
             'order' => 1,
             'visible' => true,
             'parent_id' => null,
@@ -34,6 +33,7 @@ class MenuSeeder extends Seeder
                 'title' => 'Productos',
                 'icon' => 'box',
                 'route_name' => 'admin.products.index',
+                'route_pattern' => 'admin.products.*',
                 'order' => 2,
                 'visible' => true,
                 'parent_id' => null,
@@ -45,6 +45,7 @@ class MenuSeeder extends Seeder
                 'title' => 'Servicios',
                 'icon' => 'concierge-bell',
                 'route_name' => 'admin.services.index',
+                'route_pattern' => 'admin.services.*',
                 'order' => 3,
                 'visible' => true,
                 'parent_id' => null,
@@ -56,6 +57,7 @@ class MenuSeeder extends Seeder
                 'title' => 'Usuarios',
                 'icon' => 'users',
                 'route_name' => 'admin.users.index',
+                'route_pattern' => 'admin.users.*',
                 'order' => 4,
                 'visible' => true,
                 'parent_id' => null,
@@ -70,6 +72,7 @@ class MenuSeeder extends Seeder
                 'title' => 'Seguridad',
                 'icon' => 'shield',
                 'route_name' => null,
+                'route_pattern' => null,
                 'order' => 5,
                 'visible' => true,
                 'parent_id' => null,
@@ -84,6 +87,7 @@ class MenuSeeder extends Seeder
                 'title' => 'Permisos',
                 'icon' => 'file-key',
                 'route_name' => 'admin.permissions.index',
+                'route_pattern' => 'admin.permissions.*',
                 'order' => 1,
                 'visible' => true,
                 'parent_id' => $segurityMenuId,
@@ -95,6 +99,7 @@ class MenuSeeder extends Seeder
                 'title' => 'Roles',
                 'icon' => 'square-user',
                 'route_name' => 'admin.roles.index',
+                'route_pattern' => 'admin.roles.*',
                 'order' => 2,
                 'visible' => true,
                 'parent_id' => $segurityMenuId,

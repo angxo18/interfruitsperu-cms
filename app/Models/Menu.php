@@ -16,6 +16,7 @@ class Menu extends Model
         'title',
         'icon',
         'route_name',
+        'route_pattern',
         'order',
         'visible',
         'parent_id',
@@ -61,7 +62,7 @@ class Menu extends Model
     protected function url(): Attribute
     {
         return Attribute::make(
-            get: fn() => ($this->route_name && Route::has($this->route_name))
+            get: fn () => ($this->route_name && Route::has($this->route_name))
                 ? route($this->route_name)
                 : '#'
         );
@@ -70,8 +71,8 @@ class Menu extends Model
     protected function isActive(): Attribute
     {
         return Attribute::get(
-            fn() => ($this->route_name && request()->routeIs($this->route_name))
-                || $this->children->contains(fn($child) => $child->is_active)
+            fn () => ($this->route_name && request()->routeIs([$this->route_name, $this->route_pattern]))
+                || $this->children->contains(fn ($child) => $child->is_active)
         );
     }
 }

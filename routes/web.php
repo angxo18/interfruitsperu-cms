@@ -28,6 +28,7 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
 
     Route::controller(UserController::class)->prefix('usuarios')->name('users.')->group(function () {
         Route::get('/', 'index')->name('index');
+        Route::get('/crear', 'create')->name('create');
     });
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

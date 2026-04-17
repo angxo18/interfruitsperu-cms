@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('icon')->nullable();
             $table->string('route_name')->nullable();
+            $table->string('route_pattern')->nullable();
             $table->unsignedInteger('order')->default(0);
             $table->boolean('visible')->default(false);
             $table->foreignId('parent_id')->nullable()->constrained('menus');

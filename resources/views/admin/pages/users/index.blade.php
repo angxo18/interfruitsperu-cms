@@ -12,10 +12,10 @@
 					title="Usuarios"
 					description="Listado de usuarios registrados en el sistema."
 				>
-					<button type="button" class="btn btn-primary">
+					<a href="{{ route('admin.users.create') }}" class="btn btn-primary">
 						<x-app-icon name="plus" />
 						Nuevo Usuario
-					</button>
+					</a>
 				</x-admin.card-container.header>
 			</x-slot>
 			<x-admin.data-table :table-zebra="true">
