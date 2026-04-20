@@ -6,8 +6,10 @@ use App\Filters\Admin\DateRangeFilter;
 use App\Helpers\Admin\PaginationHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\IndexRequest;
+use App\Http\Requests\Admin\User\StoreRequest;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
@@ -33,6 +35,7 @@ class UserController extends Controller
 
                 }),
             ])
+            ->orderByDesc('created_at')
             ->paginate($perPage)
             ->withQueryString();
 
@@ -42,5 +45,16 @@ class UserController extends Controller
     public function create(): View
     {
         return view('admin.pages.users.create');
+    }
+
+    public function store(StoreRequest $request): RedirectResponse
+    {
+        /* User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]); */
+
+        return redirect()->route('admin.users.index')->with('success', 'Usuario creado exitosamente.');
     }
 }

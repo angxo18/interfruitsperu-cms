@@ -87,8 +87,18 @@
 				alert-icon-type="error"
 				title="Errores en búsqueda"
 			>
-				<span>Hay errores en los filtros de búsqueda.</span>
+				<span class="font-medium">Hay errores en los filtros de búsqueda.</span>
 			</x-admin.flash-alert>
 		@endif
+
+		@session('success')
+			<x-admin.flash-alert
+				alert-class="alert alert-success"
+				alert-icon-type="success"
+				title="Operación Exitosa"
+			>
+				<span class="font-medium">{{ session('success') }}</span>
+			</x-admin.flash-alert>
+		@endsession
 	</div>
 </x-admin.layouts.app>
