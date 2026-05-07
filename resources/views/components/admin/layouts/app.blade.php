@@ -32,6 +32,18 @@
 				<div class="grow p-6">
 					{{ $slot }}
 				</div>
+
+				@session('success')
+					<x-admin.flash-alert
+						alert-class="alert alert-success"
+						alert-icon-type="success"
+						title="Operación Exitosa"
+					>
+						<span class="font-medium">{{ session('success') }}</span>
+					</x-admin.flash-alert>
+				@endsession
+
+				@stack('alerts')
 			</div>
 
 			<div

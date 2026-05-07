@@ -68,7 +68,11 @@
 						<td>
 							<x-admin.data-table.row-actions>
 								<x-admin.data-table.row-actions.button action="show" as="a" />
-								<x-admin.data-table.row-actions.button action="edit" />
+								<x-admin.data-table.row-actions.button
+									action="edit"
+									as="a"
+									href="{{ route('admin.users.edit', $user->id) }}"
+								/>
 								<x-admin.data-table.row-actions.button action="delete" />
 							</x-admin.data-table.row-actions>
 						</td>
@@ -80,7 +84,9 @@
 				</x-slot>
 			</x-admin.data-table>
 		</x-admin.card-container>
+	</div>
 
+	@push('alerts')
 		@if ($errors->filters->any())
 			<x-admin.flash-alert
 				alert-class="alert alert-error"
@@ -90,15 +96,5 @@
 				<span class="font-medium">Hay errores en los filtros de búsqueda.</span>
 			</x-admin.flash-alert>
 		@endif
-
-		@session('success')
-			<x-admin.flash-alert
-				alert-class="alert alert-success"
-				alert-icon-type="success"
-				title="Operación Exitosa"
-			>
-				<span class="font-medium">{{ session('success') }}</span>
-			</x-admin.flash-alert>
-		@endsession
-	</div>
+	@endpush
 </x-admin.layouts.app>
