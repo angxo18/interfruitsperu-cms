@@ -7,6 +7,8 @@ use App\Helpers\Admin\PaginationHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\IndexRequest;
 use App\Http\Requests\Admin\User\StoreRequest;
+use App\Http\Requests\Admin\User\UpdatePasswordRequest;
+use App\Http\Requests\Admin\User\UpdateRequest;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
@@ -49,12 +51,33 @@ class UserController extends Controller
 
     public function store(StoreRequest $request): RedirectResponse
     {
-        /* User::create([
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
-        ]); */
+        ]);
 
         return redirect()->route('admin.users.index')->with('success', 'Usuario creado exitosamente.');
+    }
+
+    public function edit(User $user): View
+    {
+        return view('admin.pages.users.edit', ['user' => $user]);
+    }
+
+    public function update(UpdateRequest $request, User $user): RedirectResponse
+    {
+        $user->update($request->validated());
+
+        return redirect()->route('admin.users.edit', $user)->with('success', 'Usuario actualizado exitosamente.');
+    }
+
+    public function updatePassword(UpdatePasswordRequest $request, User $user): RedirectResponse
+    {
+        $user->update([
+            'password' => bcrypt($request->password),
+        ]);
+
+        return redirect()->route('admin.users.edit', $user)->with('success', 'Contraseña actualizada exitosamente.');
     }
 }

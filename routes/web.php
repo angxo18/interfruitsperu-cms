@@ -30,6 +30,9 @@ Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
         Route::get('/', 'index')->name('index');
         Route::get('/crear', 'create')->name('create');
         Route::post('/', 'store')->name('store');
+        Route::get('/editar/{user}', 'edit')->name('edit');
+        Route::put('/{user}', 'update')->name('update');
+        Route::put('/{user}/update-password', 'updatePassword')->name('update-password');
     });
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

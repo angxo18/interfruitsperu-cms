@@ -3,6 +3,7 @@
     'label' => null,
     'type' => 'text',
     'value' => '',
+    'errorBag' => 'default',
 ])
 
 @php
@@ -22,7 +23,7 @@
 		{{ $attributes->except('id')->merge(['class' => 'input input-sm w-full mb-1']) }}
 	/>
 
-	@error($name)
+	@error($name, $errorBag)
 		<span class="text-xs text-error">{{ $message }}</span>
 	@enderror
 </div>
